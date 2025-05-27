@@ -61,64 +61,6 @@
             <img src="https://media.giphy.com/media/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
         </div>
     </div>
-    <script>
-        function handleUsername() {
-            const username = document.getElementById('username').value;
-            if (username.trim() !== '') {
-                localStorage.setItem('username', username);
-                document.getElementById('usernameSection').style.display = 'none';
-                document.getElementById('mainContent').style.display = 'block';
-            } else {
-                alert('Lütfen bir kullanıcı adı girin!');
-            }
-        }
-
-        function checkButtonClickTime(buttonType) {
-            const lastClickTime = localStorage.getItem(`${buttonType}ClickTime`);
-            if (lastClickTime) {
-                const currentTime = new Date().getTime();
-                const timeDiff = currentTime - parseInt(lastClickTime);
-                if (timeDiff < 24 * 60 * 60 * 1000) { // 24 saat
-                    const remainingHours = Math.ceil((24 * 60 * 60 * 1000 - timeDiff) / (60 * 60 * 1000));
-                    alert(`Bu butona ${remainingHours} saat sonra tekrar basabilirsiniz!`);
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        function saveButtonClickTime(buttonType) {
-            localStorage.setItem(`${buttonType}ClickTime`, new Date().getTime().toString());
-        }
-
-        function handleYesClick() {
-            if (!checkButtonClickTime('yes')) return;
-            
-            alert("Bende seni seviyorum! ❤️");
-            saveButtonClickTime('yes');
-        }
-
-        function handleNoClick() {
-            const noButton = document.querySelector('.no-button');
-            const container = document.querySelector('.container');
-            const containerRect = container.getBoundingClientRect();
-            
-            const randomX = Math.random() * (containerRect.width - noButton.offsetWidth);
-            const randomY = Math.random() * (containerRect.height - noButton.offsetHeight);
-            
-            noButton.style.position = 'absolute';
-            noButton.style.left = randomX + 'px';
-            noButton.style.top = randomY + 'px';
-        }
-
-        // Sayfa yüklendiğinde kullanıcı adı kontrolü
-        window.onload = function() {
-            const savedUsername = localStorage.getItem('username');
-            if (savedUsername) {
-                document.getElementById('usernameSection').style.display = 'none';
-                document.getElementById('mainContent').style.display = 'block';
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
