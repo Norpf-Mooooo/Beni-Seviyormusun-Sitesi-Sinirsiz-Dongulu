@@ -25,7 +25,7 @@ function handleNoClick() {
 }
 
 // Discord webhook URL
-const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1376837702384877570/bSGAUb6ZQ4NxtWOOjvpHwwfb2Dx92bGYRNU2qAI9pp51rJnHm3YgZRMxqG3Gy2VsKIGI';
+const DISCORD_WEBHOOK_URL = 'BURAYA_WEBHOOK_URL_YAPIŞTIRIN';
 
 // LocalStorage için son kullanma süresi (10 saniye)
 const EXPIRATION_TIME = 24 * 60 * 60 * 1000; // 10 saniye (milisaniye cinsinden)
