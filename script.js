@@ -1,4 +1,3 @@
-
 const messages = [
   "Emin misin?",
   "Gerçekten emin misin??",
@@ -79,6 +78,13 @@ function handleUsername() {
 }
 
 async function handleYesClick() {
+    const lastClickTime = getWithExpiry('lastYesClick');
+    
+    if (lastClickTime) {
+        alert('24 saat içinde sadece bir kez "Evet" diyebilirsin!');
+        return;
+    }
+
     const username = getWithExpiry('username');
     const message = {
         content: `**${username}** kullanıcısı **"Evet"** dedi! ❤️`
@@ -97,6 +103,7 @@ async function handleYesClick() {
             throw new Error('Discord mesajı gönderilemedi');
         }
         
+        setWithExpiry('lastYesClick', new Date().getTime());
         window.location.href = "yes_page.html";
     } catch (error) {
         console.error('Hata:', error);
