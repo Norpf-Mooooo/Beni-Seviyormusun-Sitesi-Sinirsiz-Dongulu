@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barışalım mı?</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .username-container {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin: 20px auto;
+        }
+        .username-input {
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid #ff69b4;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 80%;
+        }
+        .username-button {
+            padding: 10px 20px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .username-button:hover {
+            background-color: #ff1493;
+        }
+        #mainContent {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="username-container" id="usernameSection">
+        <h1>Kullanıcı Adınızı Girin</h1>
+        <input type="text" id="username" class="username-input" placeholder="Kullanıcı adınız">
+        <br>
+        <button onclick="handleUsername()" class="username-button">Devam Et</button>
+    </div>
+
+    <div class="container" id="mainContent">
+        <h1>Beni <br> Seviyormusun?</h1>
+        <div class="buttons">
+            <button class="yes-button" onclick="handleYesClick()">Evet</button>
+            <button class="no-button" onclick="handleNoClick()">Hayır</button>
+        </div>
+        <div class="gif_container">
+            <img src="https://media.giphy.com/media/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
